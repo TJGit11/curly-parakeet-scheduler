@@ -26,7 +26,7 @@
 
 // use event.target.matches("i") if/else (event delegation)
 let currentDate = document.querySelector("#currentDay");
-currentDate.textContent = dayjs().format("MMM DD, YYYY");
+currentDate.textContent = dayjs().format("MMM DD, YYYY") - 2;
 
 let px5Container = document.querySelector(".px-5");
 
@@ -37,22 +37,20 @@ px5Container.addEventListener("click", function (event) {
   }
 });
 
-// changes color based on past/present/future
+// changes color based on past(grey)/present(red)/future(green)
 for (let i = 0; i < 9; i++) {
   let timeEl = document.querySelector("#hour-" + (i + 9));
   let presentTime = dayjs().hour();
 
   if (
-    parseInt(document.querySelectorAll(".row")[0].dataset.time) < presentTime
+    parseInt(document.querySelectorAll(".row")[i].dataset.time) < presentTime
   ) {
     timeEl.classList.add("past");
   } else if (
-    document.querySelectorAll(".row")[0].dataset.time === presentTime
+    parseInt(document.querySelectorAll(".row")[i].dataset.time) === presentTime
   ) {
     timeEl.classList.add("present");
-  } else
-    parseInt(document.querySelectorAll(".row")[0].dataset.time) > presentTime;
-  {
+  } else {
     timeEl.classList.add("future");
   }
 }
