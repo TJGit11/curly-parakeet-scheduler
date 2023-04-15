@@ -1,3 +1,35 @@
+let currentDate = document.querySelector("#currentDay");
+currentDate.textContent = dayjs().format("MMM DD, YYYY");
+let px5Container = document.querySelector(".px-5");
+
+let buttonArray = [];
+
+px5Container.addEventListener("click", function (event) {
+  if (event.target.matches("i")) {
+    let newText = document.querySelector(".description");
+    newText.textContent = this.value;
+    localStorage.setItem("9", newt);
+  }
+});
+
+// changes color based on past(grey)/present(red)/future(green)
+for (let i = 0; i < 9; i++) {
+  let timeEl = document.querySelector("#hour-" + (i + 9));
+  let presentTime = dayjs().hour();
+
+  if (
+    parseInt(document.querySelectorAll(".row")[i].dataset.time) < presentTime
+  ) {
+    timeEl.classList.add("past");
+  } else if (
+    parseInt(document.querySelectorAll(".row")[i].dataset.time) === presentTime
+  ) {
+    timeEl.classList.add("present");
+  } else {
+    timeEl.classList.add("future");
+  }
+}
+
 // document.querySelectorAll("textArea")
 // document.querySelectorAll("textArea")[0].value = localStorage.getItem("9");
 //
@@ -25,35 +57,6 @@
 // parseInt(document.querySelectorAll(".row")[0].dataset.time) < dayjs().hour();
 
 // use event.target.matches("i") if/else (event delegation)
-let currentDate = document.querySelector("#currentDay");
-currentDate.textContent = dayjs().format("MMM DD, YYYY") - 2;
-
-let px5Container = document.querySelector(".px-5");
-
-px5Container.addEventListener("click", function (event) {
-  if (event.target.matches("i")) {
-    // .appendChild ?
-    console.log("you clicked i");
-  }
-});
-
-// changes color based on past(grey)/present(red)/future(green)
-for (let i = 0; i < 9; i++) {
-  let timeEl = document.querySelector("#hour-" + (i + 9));
-  let presentTime = dayjs().hour();
-
-  if (
-    parseInt(document.querySelectorAll(".row")[i].dataset.time) < presentTime
-  ) {
-    timeEl.classList.add("past");
-  } else if (
-    parseInt(document.querySelectorAll(".row")[i].dataset.time) === presentTime
-  ) {
-    timeEl.classList.add("present");
-  } else {
-    timeEl.classList.add("future");
-  }
-}
 
 // $(function () {
 // TODO: Add a listener for click events on the save button. This code should
