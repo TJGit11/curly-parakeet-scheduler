@@ -4,13 +4,42 @@ let px5Container = document.querySelector(".px-5");
 
 let buttonArray = [];
 
+// what is the content of .description
+// the content is what is in the
+
+// let newTextArray = []
+
 px5Container.addEventListener("click", function (event) {
   if (event.target.matches("i")) {
-    let newText = document.querySelector(".description");
-    newText.textContent = this.value;
-    localStorage.setItem("9", newt);
+    let newText = document.querySelectorAll(".description");
+    for (let i = 0; i < newText.length; i++) {
+      console.log(newText[i].value);
+      // console.log(newText[0].name);
+      // console.log(newText[i]);
+      // console.log(newText);
+      localStorage.setItem(newText[i].value, newText[i].value);
+
+      // newText[i].value = "";
+    }
+
+    // let newTextArray = [];
+    // let newText = document.querySelectorAll(".description");
+
+    // newTextArray = newText;
+    // console.log(newTextArray);
+
+    // localStorage.setItem("9", newt);
+    // console.log(newText.dataset.);
+    // console.log(newText.dataset.time);
+    // console.log(newText.innerHTML);
+
+    // console.log(newText);
   }
 });
+
+// let txt1 = document.getElementsByTagName("textarea");
+
+// console.log(txt1[0].value);
 
 // changes color based on past(grey)/present(red)/future(green)
 for (let i = 0; i < 9; i++) {
