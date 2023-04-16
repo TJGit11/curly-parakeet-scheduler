@@ -17,15 +17,19 @@ px5Container.addEventListener("click", function (event) {
     // let newText = document.querySelectorAll(".description");
     // let divNum = document.querySelectorAll("#py-3");
 
+    // for (let j = 0; j < divNum.length; j++) {
+    //   console.log(divNum[j].value + "hello world");
+    // }
+
     for (let i = 0; i < newText.length; i++) {
       // let divNum = document.querySelectorAll("#py-3");
-      console.log(newText[i].value);
-      // console.log(newText[i].parentNode.textContent);
+      // console.log(newText[i].value);
+      console.log(newText[i].parentNode.textContent);
       // console.log(divNum[i].value);
       // console.log(newText[0].name);
       // console.log(newText[i]);
       // console.log(newText);
-      localStorage.setItem(newText[i].value, "");
+      localStorage.setItem(newText[i].parentNode.textContent, newText[i].value);
       // console.log(divNum[0].value);
       // newText[i].value = "";
     }
