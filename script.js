@@ -22,6 +22,7 @@ px5Container.addEventListener("click", function (event) {
 
 //
 // changes color based on past(grey)/present(red)/future(green)
+// will be grey between the hours of 6pm - 8:59 AM
 for (let i = 0; i < 9; i++) {
   let timeEl = document.querySelector("#hour-" + (i + 9));
   let presentTime = dayjs().hour();
