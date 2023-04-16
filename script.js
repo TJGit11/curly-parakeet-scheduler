@@ -25,7 +25,7 @@ px5Container.addEventListener("click", function (event) {
       // console.log(newText[0].name);
       // console.log(newText[i]);
       // console.log(newText);
-      localStorage.setItem(newText[i].parentNode.textContent, newText[i].value);
+      localStorage.setItem(newText[i].value, "");
       // console.log(divNum[0].value);
       // newText[i].value = "";
     }
