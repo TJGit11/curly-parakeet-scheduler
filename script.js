@@ -4,7 +4,7 @@ let buttonArray = [];
 let newText = document.querySelectorAll(".description");
 // let divNum = document.querySelectorAll("#py-3");
 
-currentDate.textContent = dayjs().format("MMM DD, YYYY");
+currentDate.textContent = dayjs().format("dddd, " + "MMM DD, YYYY");
 
 // checks for click on the button
 // loops through class .description
@@ -15,14 +15,14 @@ px5Container.addEventListener("click", function (event) {
       // console.log(newText[i].parentNode.textContent);
       localStorage.setItem(newText[i].parentNode.textContent, newText[i].value);
       // resets the input area after saving
-      newText[i].value = "";
+      // newText[i].value = "";
     }
   }
 });
 
 //
 // changes color based on past(grey)/present(red)/future(green)
-// will be grey between the hours of 6pm - 8:59 AM
+// input sections will be grey between the hours of 6PM - 11:59 PM
 for (let i = 0; i < 9; i++) {
   let timeEl = document.querySelector("#hour-" + (i + 9));
   let presentTime = dayjs().hour();
